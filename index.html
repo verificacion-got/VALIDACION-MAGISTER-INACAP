@@ -12,10 +12,10 @@
             background-color: #f4f4f4;
         }
 
-        /* 1. Encabezado con LOGO AGRANDADO */
+        /* 1. Encabezado */
         .header-simple {
             background-color: #ffffff;
-            padding: 20px 40px; /* Más espacio */
+            padding: 20px 40px;
             border-bottom: 1px solid #e0e0e0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             display: flex;
@@ -23,7 +23,7 @@
         }
 
         .header-simple img {
-            height: 60px; /* Logo más grande (antes 35px) */
+            height: 60px;
             width: auto;
             margin-right: 15px;
         }
@@ -40,14 +40,13 @@
             justify-content: center;
         }
 
-        /* 3. El filtro de color oscuro */
         .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 42, 85, 0.75);
+            background-color: rgba(0, 42, 85, 0.82); /* Un poco más oscuro para mejor contraste */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -180,6 +179,7 @@
             margin-top: 0;
             border-bottom: 1px solid #eee;
             padding-bottom: 15px;
+            text-transform: uppercase;
         }
 
         .close-button {
@@ -245,7 +245,7 @@
         <div class="modal-content">
             <span class="close-button" id="closeButton">&times;</span>
             
-            <h3>Certificado Válido</h3>
+            <h3>Certificado de Egreso Válido para Magíster</h3>
             
             <table>
                 <tbody>
@@ -258,8 +258,12 @@
                         <td id="data-id">...</td>
                     </tr>
                     <tr>
-                        <td>Nombre de la Carrera</td> 
+                        <td>Nombre del Programa</td> 
                         <td id="data-carrera-valor">...</td>
+                    </tr>
+                    <tr>
+                        <td>Mención</td>
+                        <td id="data-mencion">...</td>
                     </tr>
                     <tr>
                         <td>Sede</td>
@@ -278,7 +282,7 @@
                         <td id="data-fecha">...</td>
                     </tr>
                     <tr>
-                        <td>Estado</td>
+                        <td>Estado de Egreso</td>
                         <td id="data-estado" style="color: #28a745; font-weight: bold;">...</td>
                     </tr>
                 </tbody>
@@ -292,15 +296,16 @@
         let validando = false;
 
         function showModalWithData() {
-            // Datos del certificado
+            // Datos actualizados
             document.getElementById('data-nombre').textContent = 'MAURICIO ANDRES IBAÑEZ MARTÍNEZ';
             document.getElementById('data-id').textContent = '10.725.130-8';
-            document.getElementById('data-carrera-valor').textContent = 'MAGISTER EN CIENCIAS DE LA INGENIERÍA INDUSTRIAL';
+            document.getElementById('data-carrera-valor').textContent = 'MAGÍSTER EN CIENCIAS DE LA INGENIERÍA INDUSTRIAL';
+            document.getElementById('data-mencion').textContent = 'GESTIÓN DE OPERACIONES Y LOGÍSTICA'; // Ejemplo de mención
             document.getElementById('data-sede').textContent = 'Maipú';
             document.getElementById('data-modalidad').textContent = 'Vespertina';
             document.getElementById('data-nota').textContent = '5,7';
             document.getElementById('data-fecha').textContent = '19 de Diciembre 2025';
-            document.getElementById('data-estado').textContent = 'APROBADO';
+            document.getElementById('data-estado').textContent = 'EGRESADO / APROBADO';
 
             modal.style.display = 'flex';
         }
